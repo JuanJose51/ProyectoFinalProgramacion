@@ -6,51 +6,55 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
-
-import java.awt.event.ActionEvent;
+import javafx.event.ActionEvent;
 
 public class LoginViewController {
-    LoginController login;
-    App app;
-    public void setApp(App app) {
-        this.app = app;
-    }
+
+    private LoginController login;
+    private App app;
+
     @FXML
     private MenuButton menuTipoUsuari;
+
     @FXML
     private Button btnIngresar;
+
     @FXML
     private Button btnRegistrar;
+
     @FXML
     private TextField txtIdUsuario;
+
+    public void setApp(App app) {
+        this.app = app;
+        this.login = new LoginController(app.hospital);
+    }
+
     @FXML
-    private void seleccionarAdministrador(ActionEvent event){
+    private void seleccionarAdministrador(ActionEvent event) {
         menuTipoUsuari.setText("Administrador");
     }
+
     @FXML
-    private void seleccionarMedico(ActionEvent event){
+    private void seleccionarMedico(ActionEvent event) {
         menuTipoUsuari.setText("Medico");
     }
+
     @FXML
-    private void seleccionarPaciente(ActionEvent event){
+    private void seleccionarPaciente(ActionEvent event) {
         menuTipoUsuari.setText("Paciente");
     }
 
-    public boolean existeUser(){
-        boolean estado=login.exiteUser(menuTipoUsuari.getText(),txtIdUsuario.getText());
-        return estado;
-
+    public boolean existeUser() {
+        return login.exiteUser(menuTipoUsuari.getText(), txtIdUsuario.getText());
     }
+
     @FXML
-    void rediriVistaUser(){
-
-        if(existeUser()){
-
-        }else{
-
+    private void onIngresarClicked(ActionEvent event) {
+        if (existeUser()) {
+            System.out.println("Usuario válido. ¡Ingresando!");
+        } else {
+            System.out.println("Usuario no válido.");
         }
-
     }
-
-
 }
