@@ -10,9 +10,9 @@ import java.util.ArrayList;
 public class Hospital {
     private String nombre;
     private Administrador administrador;
-    private ArrayList<Medico> medicos=new ArrayList<Medico>();
-    private ArrayList<Paciente> pacientes =new ArrayList<Paciente>();
-    private ArrayList<Cita> citas = new ArrayList<Cita>();
+    private ArrayList<Medico> medicos= new ArrayList<>();
+    private ArrayList<Paciente> pacientes =new ArrayList<>();
+    private ArrayList<Cita> citas = new ArrayList<>();
     private String id;
 
     public Hospital(String nombre,Administrador admin){
@@ -67,15 +67,7 @@ public class Hospital {
             }
         }return false;
     }
-    public boolean crearPaciente(String id, String nombre, String correo, String telefono, String direccion){
-        boolean estado =existePaciente(id);
-        if(estado != true){
-            Paciente p=new Paciente(id, nombre, correo, telefono, direccion);
-            pacientes.add(p);
-            return true;
-        }
-        return false;
-    }
+
     public Paciente buscarPaciente(String id){
         for(Paciente p:pacientes){
             if(p.getId().equals(id)){

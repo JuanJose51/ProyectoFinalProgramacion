@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PacienteController {
-    private List<Paciente> pacientes;
+    private final List<Paciente> pacientes;
 
     public PacienteController() {
         this.pacientes = new ArrayList<>();
@@ -20,9 +20,9 @@ public class PacienteController {
         return new ArrayList<>(pacientes);
     }
 
-    public Paciente buscarPacientePorId(int id) {
+    public Paciente buscarPacientePorId(String id) {
         for (Paciente paciente : pacientes) {
-            if (paciente.getId() === id) {
+            if (paciente.getId().equals(id)) {
                 return paciente;
             }
         }
@@ -31,7 +31,7 @@ public class PacienteController {
 
     public boolean actualizarPaciente(Paciente pacienteActualizado) {
         for (int i = 0; i < pacientes.size(); i++) {
-            if (pacientes.get(i).getId() == pacienteActualizado.getId()) {
+            if (pacientes.get(i).getId().equals(pacienteActualizado.getId())) {
                 pacientes.set(i, pacienteActualizado);
                 return true;
             }
@@ -39,7 +39,7 @@ public class PacienteController {
         return false;
     }
 
-    public boolean eliminarPaciente(int id) {
-        return pacientes.removeIf(paciente -> paciente.getId() === id);
+    public boolean eliminarPaciente(String id) {
+        return pacientes.removeIf(paciente -> paciente.getId().equals(id));
     }
 }

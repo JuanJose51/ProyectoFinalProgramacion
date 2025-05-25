@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HistorialMedicoController {
-    private List<HistorialMedico> historiales;
+    private final List<HistorialMedico> historiales;
 
     public HistorialMedicoController() {
         this.historiales = new ArrayList<>();

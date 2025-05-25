@@ -10,8 +10,10 @@ import java.util.List;
 
 public class Paciente extends Persona implements GestionCitas, Notificable {
     private String direccion;
-    private List<Cita> citas;
-    private HistorialMedico historial;
+    private final List<Cita> citas;
+    private final HistorialMedico historial;
+    private String eps;
+    private String tipoSangre;
 
     public Paciente(String id, String nombre, String correo, String telefono, String direccion) {
         super(id, nombre, correo, telefono);
@@ -62,5 +64,21 @@ public class Paciente extends Persona implements GestionCitas, Notificable {
     @Override
     public String toString() {
         return super.toString() + "\nDirección: " + direccion;
+    }
+
+    public String getEps() {
+        return eps;
+    }
+
+    public void setEps(String eps) {
+        this.eps = eps;
+    }
+
+    public String getTipoSangre() {
+        return tipoSangre;
+    }
+
+    public void setTipoSangre(String tipoSangre) {
+        this.tipoSangre = tipoSangre;
     }
 }

@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.proyectofinalprogramacion.VistaPrincipalPaciente"
+            fx:controller="co.edu.uniquindio.proyectofinalprogramacion.viewController.VistaPrincipalPaciente"
             prefHeight="400.0" prefWidth="600.0">
 
+    <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+        <TableView fx:id="tablaPacientes" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="colId" text="ID"/>
+                <TableColumn fx:id="colNombre" text="Nombre"/>
+                <TableColumn fx:id="colTelefono" text="Teléfono"/>
+                <TableColumn fx:id="colEps" text="EPS"/>
+                <TableColumn fx:id="colTipoSangre" text="Tipo Sangre"/>
+            </columns>
+        </TableView>
+
+        <GridPane hgap="10" vgap="10">
+            <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="campoId" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Nombre:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="campoNombre" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Teléfono:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="campoTelefono" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="EPS:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="campoEps" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Tipo Sangre:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="campoTipoSangre" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="10">
+            <Button text="Crear" onAction="#crearPaciente"/>
+            <Button text="Eliminar" onAction="#eliminarPaciente"/>
+            <Button text="Limpiar" onAction="#limpiarCampos"/>
+        </HBox>
+    </VBox>
 </AnchorPane>

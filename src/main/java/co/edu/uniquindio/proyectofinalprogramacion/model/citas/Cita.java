@@ -4,7 +4,6 @@ import co.edu.uniquindio.proyectofinalprogramacion.model.personas.Medico;
 import co.edu.uniquindio.proyectofinalprogramacion.model.personas.Paciente;
 
 import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
 
 public class Cita {
     private String id;

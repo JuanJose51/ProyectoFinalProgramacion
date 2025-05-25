@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="co.edu.uniquindio.proyectofinalprogramacion.viewController.PacienteViewController"
+      spacing="10" alignment="CENTER" prefWidth="400" prefHeight="300">
+
+    <Label fx:id="lblNombre" text="Nombre:"/>
+    <Label fx:id="lblId" text="ID:"/>
+    <Label fx:id="lblCorreo" text="Correo:"/>
+
+    <Button fx:id="btnVerHistorial" text="Ver Historial Médico" onAction="#verHistorial"/>
+    <Button fx:id="btnAgendarCita" text="Agendar Cita" onAction="#agendarCita"/>
+    <Button fx:id="btnCerrarSesion" text="Cerrar Sesión" onAction="#cerrarSesion"/>
+</VBox>

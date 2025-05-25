@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HospitalController {
-    private List<Hospital> hospitales;
+    private final List<Hospital> hospitales;
 
     public HospitalController() {
         this.hospitales = new ArrayList<>();
@@ -20,9 +20,9 @@ public class HospitalController {
         return new ArrayList<>(hospitales);
     }
 
-    public Hospital buscarHospitalPorId(int id) {
+    public Hospital buscarHospitalPorId(String id) {
         for (Hospital hospital : hospitales) {
-            if (hospital.getId() == id) {
+            if (hospital.getId().equals(id)) {
                 return hospital;
             }
         }
@@ -31,7 +31,7 @@ public class HospitalController {
 
     public boolean actualizarHospital(Hospital hospitalActualizado) {
         for (int i = 0; i < hospitales.size(); i++) {
-            if (hospitales.get(i).getId() == hospitalActualizado.getId()) {
+            if (hospitales.get(i).getId().equals(hospitalActualizado.getId())) {
                 hospitales.set(i, hospitalActualizado);
                 return true;
             }
@@ -39,7 +39,7 @@ public class HospitalController {
         return false;
     }
 
-    public boolean eliminarHospital(int id) {
-        return hospitales.removeIf(hospital -> hospital.getId() == id);
+    public boolean eliminarHospital(String id) {
+        return hospitales.removeIf(hospital -> hospital.getId().equals(id));
     }
 }

@@ -18,7 +18,10 @@ public class App extends Application {
 
     static Administrador administrador = new Administrador("1", "pedro", "admin@gmail.com.co", "311");
     public static Hospital hospital = new Hospital("Hospital rapidaAtencion", administrador);
-    public static void main(String[] args) {launch(args);}
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void start(Stage primaryStage) {
@@ -43,5 +46,9 @@ public class App extends Application {
             e.printStackTrace();
             System.err.println("No se pudo cargar la vista Login.fxml");
         }
+    }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
     }
 }

@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class Farmacia {
     // Simulación de pedidos de medicamentos por paciente
-    private Map<Paciente, String> pedidos;
-    private boolean id;
+    private final Map<Paciente, String> pedidos;
+    private String id;
 
     public Farmacia() {
         this.pedidos = new HashMap<>();
@@ -41,11 +41,11 @@ public class Farmacia {
         }
     }
 
-    public boolean getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(boolean id) {
+    public void setId(String id) {
         this.id = id;
     }
 }

@@ -22,9 +22,9 @@ public class HistorialMedico {
 
     // Clase interna para representar cada entrada del historial
     public static class Entrada {
-        private LocalDateTime fecha;
-        private String diagnostico;
-        private String tratamiento;
+        private final LocalDateTime fecha;
+        private final String diagnostico;
+        private final String tratamiento;
 
         public Entrada(String diagnostico, String tratamiento) {
             this.fecha = LocalDateTime.now();  // Se asigna la fecha actual al crearla

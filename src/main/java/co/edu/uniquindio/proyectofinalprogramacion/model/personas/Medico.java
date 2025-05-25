@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Medico extends Persona implements ManejoHistorial, Notificable {
     private String especialidad;
-    private List<Cita> citasAsignadas;
+    private final List<Cita> citasAsignadas;
 
     public Medico(String id, String nombre, String correo, String telefono, String especialidad) {
         super(id, nombre, correo, telefono);

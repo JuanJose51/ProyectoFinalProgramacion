@@ -6,9 +6,10 @@ import co.edu.uniquindio.proyectofinalprogramacion.model.personas.Paciente;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CitaController {
-    private List<Cita> citas;
+    private final List<Cita> citas;
     private final List<Cita> listaCitas = new ArrayList<>();
     private final List<Medico> listaMedicos = new ArrayList<>();
     private final List<Paciente> listaPacientes = new ArrayList<>();
@@ -25,9 +26,9 @@ public class CitaController {
         return new ArrayList<>(citas);
     }
 
-    public Cita buscarCitaPorId(int id) {
+    public Cita buscarCitaPorId(String id) {
         for (Cita cita : citas) {
-            if (cita.getId() === id) {
+            if (Objects.equals(cita.getId(), id)) {
                 return cita;
             }
         }
@@ -36,7 +37,7 @@ public class CitaController {
 
     public boolean actualizarCita(Cita citaActualizada) {
         for (int i = 0; i < citas.size(); i++) {
-            if (citas.get(i).getId() == citaActualizada.getId()) {
+            if (citas.get(i).getId().equals(citaActualizada.getId())) {
                 citas.set(i, citaActualizada);
                 return true;
             }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MedicoController {
-    private List<Medico> medicos;
+    private final List<Medico> medicos;
 
     public MedicoController() {
         this.medicos = new ArrayList<>();
@@ -20,9 +20,9 @@ public class MedicoController {
         return new ArrayList<>(medicos);
     }
 
-    public Medico buscarMedicoPorId(int id) {
+    public Medico buscarMedicoPorId(String id) {
         for (Medico medico : medicos) {
-            if (medico.getId() == id) {
+            if (medico.getId().equals(id)) {
                 return medico;
             }
         }
@@ -31,7 +31,7 @@ public class MedicoController {
 
     public boolean actualizarMedico(Medico medicoActualizado) {
         for (int i = 0; i < medicos.size(); i++) {
-            if (medicos.get(i).getId() == medicoActualizado.getId()) {
+            if (medicos.get(i).getId().equals(medicoActualizado.getId())) {
                 medicos.set(i, medicoActualizado);
                 return true;
             }
@@ -39,7 +39,7 @@ public class MedicoController {
         return false;
     }
 
-    public boolean eliminarMedico(int id) {
-        return medicos.removeIf(medico -> medico.getId() == id);
+    public boolean eliminarMedico(String id) {
+        return medicos.removeIf(medico -> medico.getId().equals(id));
     }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FarmaciaController {
-    private List<Farmacia> farmacias;
+    private final List<Farmacia> farmacias;
 
     public FarmaciaController() {
         this.farmacias = new ArrayList<>();
@@ -20,9 +20,9 @@ public class FarmaciaController {
         return new ArrayList<>(farmacias);
     }
 
-    public Farmacia buscarFarmaciaPorId(int id) {
+    public Farmacia buscarFarmaciaPorId(String id) {
         for (Farmacia farmacia : farmacias) {
-            if (farmacia.getId() == id) {
+            if (farmacia.getId().equals(id)) {
                 return farmacia;
             }
         }
@@ -31,7 +31,7 @@ public class FarmaciaController {
 
     public boolean actualizarFarmacia(Farmacia farmaciaActualizada) {
         for (int i = 0; i < farmacias.size(); i++) {
-            if (farmacias.get(i).getId() == farmaciaActualizada.getId()) {
+            if (farmacias.get(i).getId().equals(farmaciaActualizada.getId())) {
                 farmacias.set(i, farmaciaActualizada);
                 return true;
             }
@@ -39,7 +39,7 @@ public class FarmaciaController {
         return false;
     }
 
-    public boolean eliminarFarmacia(int id) {
-        return farmacias.removeIf(farmacia -> farmacia.getId() == id);
+    public boolean eliminarFarmacia(String id) {
+        return farmacias.removeIf(farmacia -> farmacia.getId().equals(id));
     }
 }

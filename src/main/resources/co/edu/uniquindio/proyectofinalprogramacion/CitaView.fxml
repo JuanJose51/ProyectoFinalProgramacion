@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="co.edu.uniquindio.proyectofinalprogramacion.viewController.CitaViewController">
+    <top>
+        <Label text="Gestión de Citas" style="-fx-font-size: 24px; -fx-padding: 10;" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="10" padding="10">
+            <TableView fx:id="tablaCitas" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colFecha" text="Fecha" prefWidth="150"/>
+                    <TableColumn fx:id="colMotivo" text="Motivo" prefWidth="150"/>
+                    <TableColumn fx:id="colMedico" text="Médico" prefWidth="150"/>
+                    <TableColumn fx:id="colPaciente" text="Paciente" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="10" padding="10">
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" minWidth="100"/>
+                    <ColumnConstraints minWidth="200"/>
+                </columnConstraints>
+
+                <Label text="ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoId" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Fecha:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="campoFecha" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Motivo:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="campoMotivo" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Médico:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="comboMedico" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Paciente:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="comboPaciente" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Crear" onAction="#crearCita"/>
+                <Button text="Actualizar" onAction="#actualizarCita"/>
+                <Button text="Eliminar" onAction="#eliminarCita"/>
+                <Button text="Limpiar">
+                    <onAction>#limpiarCampos</onAction>
+                </Button>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
