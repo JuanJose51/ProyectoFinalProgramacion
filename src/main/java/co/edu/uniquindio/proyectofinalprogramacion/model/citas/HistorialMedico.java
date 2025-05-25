@@ -6,6 +6,20 @@ import java.util.List;
 
 public class HistorialMedico {
 
+    private int id;
+
+    public void setEntradas(List<Entrada> entradas) {
+        this.entradas = entradas;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     // Clase interna para representar cada entrada del historial
     public static class Entrada {
         private LocalDateTime fecha;

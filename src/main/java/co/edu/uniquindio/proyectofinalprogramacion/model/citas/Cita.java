@@ -4,6 +4,7 @@ import co.edu.uniquindio.proyectofinalprogramacion.model.personas.Medico;
 import co.edu.uniquindio.proyectofinalprogramacion.model.personas.Paciente;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 public class Cita {
     private String id;
@@ -69,5 +70,20 @@ public class Cita {
                 "Cita ID: %s\nFecha: %s\nPaciente: %s\nMédico: %s\nMotivo: %s",
                 id, fechaHora.toString(), paciente.getNombre(), medico.getNombre(), motivo
         );
+    }
+
+    public void getFecha() {
+
+    }
+
+    public void setFechaCita(LocalDateTime localDateTime) {
+    }
+
+    public String getIdCita() {
+        return null;
+    }
+
+    public LocalDateTime getFechaCita() {
+        return fechaHora;
     }
 }

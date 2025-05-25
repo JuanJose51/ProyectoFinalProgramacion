@@ -13,6 +13,8 @@ public class Hospital {
     private ArrayList<Medico> medicos=new ArrayList<Medico>();
     private ArrayList<Paciente> pacientes =new ArrayList<Paciente>();
     private ArrayList<Cita> citas = new ArrayList<Cita>();
+    private String id;
+
     public Hospital(String nombre,Administrador admin){
         this.nombre=nombre;
         this.administrador=admin;
@@ -119,5 +121,11 @@ public class Hospital {
     }
 
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 }

@@ -8,6 +8,7 @@ import java.util.Map;
 public class Farmacia {
     // Simulación de pedidos de medicamentos por paciente
     private Map<Paciente, String> pedidos;
+    private boolean id;
 
     public Farmacia() {
         this.pedidos = new HashMap<>();
@@ -38,5 +39,13 @@ public class Farmacia {
         } else {
             System.out.println("⚠️ No existe un pedido para cancelar.");
         }
+    }
+
+    public boolean getId() {
+        return id;
+    }
+
+    public void setId(boolean id) {
+        this.id = id;
     }
 }
